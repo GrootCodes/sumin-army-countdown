@@ -1,17 +1,16 @@
 <head>
-<title>수밍</title>
+  <title>수민-전역일</title>
   <style>
-   #demo{
+   #timer{
        color:#0eac00;
        font-size:500%;
      }
   </style>
 </head>
 <body>
-    <h1>수밍 타이머</h1>
-    <div id= "demo"></div>
+  <h1>수민 타이머</h1>
+  <div id= "timer"></div>
 </body>
-
 
 <script>
 // Set the date we're counting down to
@@ -27,8 +26,8 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + days*24;
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) + hours*60;
   var seconds = Math.floor((distance % (1000 * 60)) / 1000) + minutes*60;
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = 
+  // Display the result in the element with id="timer"
+  document.getElementById("timer").innerHTML = 
   days + "일 남았습니다.<br>"
   + "or "+ hours + "시간 남았습니다.<br>"
   + "or "+ minutes + "분 남았습니다.<br>"
@@ -36,7 +35,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "전역 축하해~~~~ 수밍 ";
+    document.getElementById("timer").innerHTML = "전역 축하해~~~~ 수밍 ";
   }
 }, 1000);
 </script>
