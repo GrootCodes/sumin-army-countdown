@@ -1,5 +1,5 @@
 <head>
-<title>수민</title>
+<title>수민-전역일</title>
   <style>
    #demo{
        color:#42f132;
@@ -24,17 +24,19 @@ var x = setInterval(function() {
   var distance = countDownDate - now;
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + Math.floor(distance / (1000 * 60 * 60));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + days*24;
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) + hours*60;
   var seconds = Math.floor((distance % (1000 * 60)) / 1000) + minutes*60;
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = 
-  days + "일 남았습니다."+ "<br>" + hours + "시간 남았습니다.<br>"
-  + minutes + "분 남았습니다.<br>" + seconds + "초 남았습니다.<br>";
+  days + "일 남았습니다.<br>"
+  + "or "+ hours + "시간 남았습니다.<br>"
+  + "or "+ minutes + "분 남았습니다.<br>"
+  + "or "+ seconds + "초 남았습니다.<br>";
   // If the count down is finished, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "전역 축하해~~~~ 수밍 ";
   }
 }, 1000);
 </script>
